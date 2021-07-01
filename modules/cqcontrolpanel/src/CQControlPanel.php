@@ -5,6 +5,7 @@ namespace craftquest;
 use Craft;
 use craft\events\RegisterCpNavItemsEvent;
 use craft\web\twig\variables\Cp;
+use craftquest\services\NavItemService;
 use Yii\base\Module;
 use Yii\base\Event;
 
@@ -14,6 +15,19 @@ class CQControlPanel extends Module
   {
     Craft::setAlias('@cqcontrolpanel', __DIR__);
     parent::init();
+    $this->_registerServices();
+    $this->_registerCpEvents();
+  }
+
+  private function _registerServices()
+  {
+    $this->setComponents([
+      'navItems' => NavItemService::class,
+    ]);
+  }
+
+  private function _registerCpEvents()
+  {
     Event::on(
       Cp::class,
       Cp::EVENT_REGISTER_CP_NAV_ITEMS,
@@ -24,6 +38,6 @@ class CQControlPanel extends Module
           'icon' => '@cqcontrolpanel/web/img/fa-microphone.svg',
         ];
       }
-    );
+    ); 
   }
 }
