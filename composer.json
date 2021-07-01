@@ -10,7 +10,8 @@
   },
   "autoload": {
     "psr-4": {
-      "craftquest\\": "modules/cqcontrolpanel/"
+      "craftquest\\": "modules/cqcontrolpanel/",
+      "modules\\downlinkmodule\\": "modules/downlinkmodule/src/"
     }
   },
   "config": {
