@@ -5,12 +5,31 @@ namespace craftquest;
 use Craft;
 use craft\events\RegisterCpNavItemsEvent;
 use craft\web\twig\variables\Cp;
-use craftquest\services\NavItemService;
+use craftquest\services\NavItemsService;
 use Yii\base\Module;
 use Yii\base\Event;
 
 class CQControlPanel extends Module
 {
+
+  const CUSTOM_NAV_ITEMS = [
+    [
+      'url' => 'entries/podcast',
+      'label' => 'Podcast Episodes',
+      'icon' => '@cqcontrolpanel/web/img/fa-microphone.svg',
+    ],
+    [
+      'url' => 'entries/reviews',
+      'label' => 'Review',
+      'icon' => '@cqcontrolpanel/web/img/fa-microphone.svg',
+    ],
+    [
+      'url' => 'entries/blog',
+      'label' => 'Blog Articles',
+      'icon' => '@cqcontrolpanel/web/img/fa-microphone.svg',
+    ],
+  ];
+  
   public function init()
   {
     Craft::setAlias('@cqcontrolpanel', __DIR__);
@@ -22,22 +41,29 @@ class CQControlPanel extends Module
   private function _registerServices()
   {
     $this->setComponents([
-      'navItems' => NavItemService::class,
+      'navItems' => NavItemsService::class,
     ]);
   }
 
   private function _registerCpEvents()
   {
-    Event::on(
-      Cp::class,
+    $events = [
       Cp::EVENT_REGISTER_CP_NAV_ITEMS,
-      function(RegisterCpNavItemsEvent $event) {
-        $event->navItems[] = [
-          'url' => 'entries/podcast',
-          'label' => 'Podcast Episodes',
-          'icon' => '@cqcontrolpanel/web/img/fa-microphone.svg',
-        ];
-      }
-    ); 
+    ];
+
+    foreach ($events as $eventName)
+    {
+      Event::on(
+        Cp::class,
+        $eventName,
+        function(RegisterCpNavItemsEvent $event) use($eventName) {
+          if ($eventName == Cp::EVENT_REGISTER_CP_NAV_ITEMS)
+          {
+            $this->navItems->buildCustomNav($event, self::CUSTOM_NAV_ITEMS);
+          }
+        }
+      ); 
+    }
   }
+
 }

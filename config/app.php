@@ -23,7 +23,6 @@ return [
     'id' => App::env('APP_ID') ?: 'CraftCMS',
     'modules' => [
         'c-q-control-panel' => craftquest\CQControlPanel::class,
-        'downlink-module' => modules\downlinkmodule\DownlinkModule::class,
     ],
-    'bootstrap' => ['c-q-control-panel', 'downlink-module'],
+    'bootstrap' => ['c-q-control-panel'],
 ];
