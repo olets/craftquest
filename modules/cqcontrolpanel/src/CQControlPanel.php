@@ -36,6 +36,18 @@ class CQControlPanel extends Module
     parent::init();
     $this->_registerServices();
     $this->_registerCpEvents();
+    $this->_registerTwigExtensions();
+  }
+
+  private function registerTwigExtensions()
+  {
+    $extensions = [
+      PlatifyExtension::class,
+    ];
+
+    foreach ($extensions as $extension) {
+      Craft::$app->view->registerTwigExtension(new $extension);
+    }
   }
 
   private function _registerServices()
