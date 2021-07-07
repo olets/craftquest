@@ -1,4 +1,4 @@
-{% set text = 'hello meat world' %}
+{% set text = 'hello chicken world' %}
 
 <h1>Extending Twig in Craft CMS</h1>
 
@@ -9,3 +9,7 @@
 <h2><code>plantIngredients()</code> function</h2>
 
 {{ ul(plantIngredients(1)) }}
+
+<h2><code>plantify()</code> function</h2>
+
+{{ plantify(['tomato', 'corn', 'bamboo', 'basil', 'carrot', 'pea'], text) }}
