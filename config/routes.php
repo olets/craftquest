@@ -19,5 +19,5 @@
  */
 
 return [
-  'plantify' =>['template' => '_routes/plantify'],
+  'extending-twig-in-craft-cms' =>['template' => '_routes/extending-twig-in-craft-cms'],
 ];
