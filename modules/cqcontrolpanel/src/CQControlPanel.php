@@ -39,10 +39,10 @@ class CQControlPanel extends Module
     $this->_registerTwigExtensions();
   }
 
-  private function registerTwigExtensions()
+  private function _registerTwigExtensions()
   {
     $extensions = [
-      PlatifyExtension::class,
+      PlantifyExtension::class,
     ];
 
     foreach ($extensions as $extension) {

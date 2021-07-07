@@ -19,5 +19,5 @@
  */
 
 return [
-
+  'plantify' =>['template' => '_routes/plantify'],
 ];
