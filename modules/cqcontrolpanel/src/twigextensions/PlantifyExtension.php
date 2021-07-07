@@ -1,6 +1,6 @@
 <?php
 
-namespace craftquest;
+namespace craftquest\twigextensions;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;

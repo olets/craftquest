@@ -6,6 +6,8 @@ use Craft;
 use craft\events\RegisterCpNavItemsEvent;
 use craft\web\twig\variables\Cp;
 use craftquest\services\NavItemsService;
+use craftquest\twigextensions\PlantifyExtension;
+use craftquest\twigextensions\CQGlobalVariables;
 use Yii\base\Module;
 use Yii\base\Event;
 
@@ -42,7 +44,8 @@ class CQControlPanel extends Module
   private function _registerTwigExtensions()
   {
     $extensions = [
-      PlantifyExtension::class,
+        PlantifyExtension::class,
+        CQGlobalVariables::class,
     ];
 
     foreach ($extensions as $extension) {
