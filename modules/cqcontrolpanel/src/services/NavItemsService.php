@@ -2,6 +2,7 @@
 
 namespace craftquest\services;
 
+use Craft;
 use craft\base\Component;
 
 class NavItemsService extends Component

@@ -19,5 +19,5 @@
  */
 
 return [
-
+  'extending-twig-in-craft-cms' =>['template' => '_routes/extending-twig-in-craft-cms'],
 ];
