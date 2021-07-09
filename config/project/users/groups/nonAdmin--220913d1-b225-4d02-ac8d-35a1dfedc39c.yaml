@@ -1,0 +1,8 @@
+description: ''
+handle: nonAdmin
+name: Non-admin
+permissions:
+  - accesssitewhensystemisoff
+  - accesscpwhensystemisoff
+  - accesscp
+  - 'utility:deprecation-errors'

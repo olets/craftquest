@@ -1,4 +1,4 @@
-dateModified: 1617812675
+dateModified: 1625791675
 email:
   fromEmail: ryan@mijingo.com
   fromName: Downlink
@@ -17,11 +17,5 @@ system:
   edition: pro
   live: true
   name: Downlink
-  schemaVersion: 3.6.7
+  schemaVersion: 3.6.4
   timeZone: UTC
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

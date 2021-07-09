@@ -19,6 +19,12 @@ class DeprecWidget extends Widget {
         return "";
     }
 
+    public static function isSelectable(): bool
+    {
+        // return Craft::$app->getUser()->getIsAdmin();
+        return Craft::$app->getUser()->checkPermission('utility:deprecation-errors');
+    }
+
     protected static function allowMultipleInstances(): bool
     {
         return false;
