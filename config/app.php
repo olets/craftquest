@@ -23,6 +23,10 @@ return [
     'id' => App::env('APP_ID') ?: 'CraftCMS',
     'modules' => [
         'c-q-control-panel' => craftquest\CQControlPanel::class,
+        'widgetopia' => widgetopia\Widgetopia::class,
     ],
-    'bootstrap' => ['c-q-control-panel'],
+    'bootstrap' => [
+        'c-q-control-panel',
+        'widgetopia',
+    ],
 ];

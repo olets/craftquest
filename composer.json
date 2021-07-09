@@ -10,7 +10,8 @@
   },
   "autoload": {
     "psr-4": {
-      "craftquest\\": "modules/cqcontrolpanel/src/"
+      "craftquest\\": "modules/cqcontrolpanel/src/",
+      "widgetopia\\": "modules/widgetopia/src/"
     }
   },
   "config": {
