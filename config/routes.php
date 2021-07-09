@@ -19,5 +19,6 @@
  */
 
 return [
-  'extending-twig-in-craft-cms' =>['template' => '_routes/extending-twig-in-craft-cms'],
+    'building-a-craft-cms-dashboard-widget' =>['template' => '_routes/building-a-craft-cms-dashboard-widget'],
+    'extending-twig-in-craft-cms' =>['template' => '_routes/extending-twig-in-craft-cms'],
 ];
