@@ -19,6 +19,21 @@ class DeprecWidget extends Widget {
         return "";
     }
 
+    protected static function allowMultipleInstances(): bool
+    {
+        return false;
+    }
+
+    public static function icon(): string
+    {
+        return Craft::getAlias('@appicons/bug.svg');
+    }
+
+    public static function maxColspan(): int
+    {
+        return 2;
+    }
+
     public function getBodyHtml(): string
     {
         $count = Craft::$app->getDeprecator()->getTotalLogs();
